@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Points</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #28a745;">Calculateur de Points</h1>
+
+        <div id="player-setup">
+            <h2 style="color: #28a745;">Configuration des joueurs</h2>
+             <div class="player-input">
+                <label for="player1">Joueur 1:</label>
+                <input type="text" id="player1" required>
+                <span class="error" id="player1-error"></span>
+            </div>
+            <div class="player-input">
+                <label for="player2">Joueur 2:</label>
+                <input type="text" id="player2" required>
+                 <span class="error" id="player2-error"></span>
+            </div>
+            <div class="player-input">
+                <label for="player3">Joueur 3:</label>
+                <input type="text" id="player3" required>
+                 <span class="error" id="player3-error"></span>
+            </div>
+            <div class="player-input">
+                <label for="player4">Joueur 4:</label>
+                <input type="text" id="player4" required>
+                 <span class="error" id="player4-error"></span>
+            </div>
+            <div class="player-input">
+                <label for="player5">Joueur 5:</label>
+                <input type="text" id="player5" required>
+                <span class="error" id="player5-error"></span>
+            </div>
+            <button id="start-game-button">Démarrer la partie</button>
+        </div>
+
+        <div id="game-area" style="display: none;">
+            <h2 style="color: #28a745;">Nouvelle Manche</h2>
+             <div class="form-group">
+                <label for="contract">Contrat:</label>
+                <select id="contract">
+                    <option value="petite">Petite</option>
+                    <option value="garde">Garde</option>
+                    <option value="garde-sans">Garde Sans</option>
+                    <option value="garde-contre">Garde Contre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="preneur">Preneur:</label>
+                <select id="preneur"></select>
+            </div>
+            <div class="form-group">
+                <label for="partenaire">Partenaire (optionnel):</label>
+                <select id="partenaire">
+                    <option value="none">Aucun</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="points">Points:</label>
+                <input type="number" id="points" value="0">
+                <span class="error" id="points-error"></span>
+            </div>
+             <div class="form-group">
+                <label for="preneur-succes">Preneur a réussi ?</label>
+                <input type="checkbox" id="preneur-succes" checked>
+            </div>
+            <div class="form-group">
+                <label for="bonusPlayer">Bonus Player :</label>
+                <select id="bonusPlayer">
+                    <option value="none">Aucun</option>
+                </select>
+            </div>
+              <div class="form-group">
+                <label for="bonus">Points bonus :</label>
+                <select id="bonus">
+                   <option value="0">0</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <button id="add-round-button">Ajouter Manche</button>
+            <button id="show-history-button">Historique</button>
+           <button id="show-stats-button">Statistiques</button>
+            <div id="score-area">
+                <h2 style="color: #28a745;">Scores</h2>
+                <table id="score-table">
+                    <thead>
+                        <tr>
+                            <th>Joueur</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="score-body">
+                        <!-- Les scores seront insérés ici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+          <div id="history-area" style="display: none;">
+            <h2 style="color: #28a745;">Historique des Manches</h2>
+            <div id="history-content">
+               
+            </div>
+            <button id="back-to-game-from-history-button">Retour au jeu</button>
+        </div>
+
+           <div id="stats-area" style="display: none;">
+            <h2 style="color: #28a745;">Statistiques</h2>
+            <div id="stats-content"></div>
+            <button id="back-to-game-from-stats-button">Retour au jeu</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
